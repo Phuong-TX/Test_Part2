@@ -2,10 +2,6 @@ import Page from "./Page";
 
 class CheckBoxes extends Page{
     
-    public open () {
-        return super.open('checkboxes');
-    }
-
     private get checkBox1 (){
         return $('#checkboxes > input[type=checkbox]:nth-child(1)')
     }
@@ -31,7 +27,9 @@ class CheckBoxes extends Page{
        return await this.checkBox2.isSelected(); // => true
     }
 
-
+    public open () {
+        return super.open('checkboxes');
+    }
    
 }
 

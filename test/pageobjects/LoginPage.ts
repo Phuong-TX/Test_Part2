@@ -8,23 +8,19 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    public get inputUsername () {
+    private get inputUsername () {
         return $('#username');
     }
 
-    public get inputPassword () {
+    private get inputPassword () {
         return $('#password');
     }
 
-    public get btnLogin () {
+    private get btnLogin () {
         return $('#login > button');
     }
 
-    public get msgError () {
-        return $('#flash'); 
-    }
-
-    public async login (username: string, password: string) {
+    async login (username: string, password: string) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnLogin.click();

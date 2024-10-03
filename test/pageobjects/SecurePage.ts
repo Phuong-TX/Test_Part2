@@ -8,12 +8,17 @@ class SecurePage extends Page {
     /**
      * define selectors using getter methods
      */
-    public get flashAlert () {
+    private get flashAlert () {
         return $('#flash');
     }
+    async checkFlashAlertDisplayed (){
+        await this.flashAlert.isDisplayed();
+    }
 
-    public async getFlashAlertTitle(): Promise<string> {
+    async getFlashAlertTitle(): Promise<string> {
         return await this.flashAlert.getText();
     }
 }
 export default new SecurePage();
+
+            
